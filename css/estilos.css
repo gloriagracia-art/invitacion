@@ -20,64 +20,74 @@ body {
 }
 
 
-/* ==========================================
-   PORTADA
-========================================== */
+/*=========================
+    PORTADA
+=========================*/
 
-#hero {
-    position: relative;
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
+#hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.hero-img {
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
+.hero-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
 }
 
-.overlay {
-    position: absolute;
-    inset: 0;
-
-    background: rgba(0, 0, 0, .28);
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.28);
 }
 
 .hero-content{
     position:relative;
     z-index:2;
     text-align:center;
-    color:#fff;
-    max-width:900px;
-    padding:30px;
-
-    margin-top:180px;   /* Baja todo el contenido */
 }
 
 /* Botón */
 
 .btn{
-    display:inline-block;
-    padding:15px 40px;
-    background:#8B1E24;
-    color:#fff;
-    text-decoration:none;
-    border-radius:40px;
 
-    margin-top:260px;   /* Baja únicamente el botón */
+    display:inline-block;
+
+    margin-top:45px;
+
+    padding:18px 48px;
+
+    background:#8B1E24;
+
+    color:#fff;
+
+    font-size:1.3rem;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+    margin-top:420px;   /* Baja únicamente el botón */
 }
 
-.btn:hover {
-    background: #6F171C;
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    background:#74171D;
+
 }
 
 
@@ -838,5 +848,55 @@ body {
     font-size:3rem;
 
 }
+
+}
+
+/*====================================
+    RESPONSIVE - CELULAR
+====================================*/
+
+@media (max-width:768px){
+
+    #hero{
+        height:100vh;
+    }
+
+    .btn{
+        margin-top:35px;
+        padding:16px 42px;
+        font-size:1.2rem;
+    }
+
+    .contenedor{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .foto{
+        position:static;
+        margin:0 auto 35px;
+    }
+
+    .foto img{
+        width:100%;
+        max-width:430px;
+        margin:auto;
+        display:block;
+    }
+
+    .texto{
+        max-width:100%;
+        text-align:center;
+    }
+
+    .texto h2{
+        font-size:2.7rem;
+        line-height:1.2;
+    }
+
+    .texto p{
+        font-size:1.25rem;
+        line-height:1.8;
+    }
 
 }

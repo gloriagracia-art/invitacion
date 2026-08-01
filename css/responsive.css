@@ -1,0 +1,49 @@
+/*====================================
+    RESPONSIVE - CELULAR
+====================================*/
+
+@media (max-width:768px){
+
+    #hero{
+        height:100vh;
+    }
+
+    .btn{
+        margin-top:35px;
+        padding:16px 42px;
+        font-size:1.2rem;
+    }
+
+    .contenedor{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .foto{
+        position:static;
+        margin:0 auto 35px;
+    }
+
+    .foto img{
+        width:100%;
+        max-width:430px;
+        margin:auto;
+        display:block;
+    }
+
+    .texto{
+        max-width:100%;
+        text-align:center;
+    }
+
+    .texto h2{
+        font-size:2.7rem;
+        line-height:1.2;
+    }
+
+    .texto p{
+        font-size:1.25rem;
+        line-height:1.8;
+    }
+
+}
