@@ -1,0 +1,842 @@
+/* ==========================================
+   CONFIGURACIÓN GENERAL
+========================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #F9F6F1;
+    color: #40352A;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   PORTADA
+========================================== */
+
+#hero {
+    position: relative;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.hero-img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, .28);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    color:#fff;
+    max-width:900px;
+    padding:30px;
+
+    margin-top:180px;   /* Baja todo el contenido */
+}
+
+/* Botón */
+
+.btn{
+    display:inline-block;
+    padding:15px 40px;
+    background:#8B1E24;
+    color:#fff;
+    text-decoration:none;
+    border-radius:40px;
+
+    margin-top:260px;   /* Baja únicamente el botón */
+}
+
+.btn:hover {
+    background: #6F171C;
+}
+
+
+/* ==========================================
+   BIENVENIDA
+========================================== */
+
+#bienvenida{
+    padding-top:50px;
+    padding-right:40px;
+    padding-bottom:90px;
+    padding-left:40px;
+
+    background:#F9F6F1;
+}
+
+.contenedor{
+    max-width:1280px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:42% 58%;
+    gap:45px;
+
+    align-items:center;
+
+    margin-top:-20px;
+}
+
+
+/* ==========================================
+   FOTO
+========================================== */
+
+.foto{
+    position: sticky;
+    top: 10px;
+    margin-top: -280px;
+}
+
+.foto img {
+    width: 100%;
+    display: block;
+
+    border-radius: 24px;
+
+    box-shadow: 0 25px 60px rgba(0,0,0,.18);
+}
+
+
+/* ==========================================
+   TEXTO
+========================================== */
+
+.texto {
+    max-width: 640px;
+}
+
+.texto h2 {
+    font-size: 3.2rem;
+    color: #21412E;
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+.bordado {
+    text-align: center;
+
+    color: #8B1E24;
+
+    letter-spacing: 8px;
+
+    font-size: 30px;
+
+    margin: 10px 0 25px;
+}
+
+.texto p {
+    font-size: 1.45rem;
+
+    line-height: 1.75;
+
+    margin: 18px 0;
+}
+
+
+/* ==========================================
+   DESPEDIDA
+========================================== */
+
+.despedida {
+    margin-top: 80px;
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(0,0,0,.08);
+
+    text-align: center;
+}
+
+.despedida h3 {
+    color: #8B1E24;
+}
+
+.firma {
+    color: #8B1E24;
+    font-size: 3rem;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .contenedor {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .foto {
+        position: static;
+        margin: 0 auto 35px;
+    }
+
+    .foto img {
+        max-width: 430px;
+        margin: auto;
+    }
+
+    .texto {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .texto h2 {
+        font-size: 2.7rem;
+    }
+
+    .texto p {
+        font-size: 1.25rem;
+    }
+
+}
+
+/* ==========================================
+   PÁGINA 3 - EVENTO
+========================================== */
+
+#evento{
+
+    padding:120px 40px;
+
+    background:#F7F3EC;
+
+}
+
+.titulo-evento{
+
+    max-width:900px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.titulo-evento h2{
+
+    font-size:3.3rem;
+
+    color:#21412E;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+
+}
+
+.titulo-evento p{
+
+    font-size:1.45rem;
+
+    color:#555;
+
+    margin-top:20px;
+
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.grid-evento{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+
+/* ==========================================
+   TARJETAS
+========================================== */
+
+.card-evento{
+
+    background:#FFF;
+
+    border-radius:22px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    border-top:6px solid #1E5B37;
+
+}
+
+.card-evento:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+
+}
+
+.card-evento .icono{
+
+    font-size:52px;
+
+    margin-bottom:20px;
+
+}
+
+.card-evento h3{
+
+    font-size:2rem;
+
+    color:#21412E;
+
+    margin-bottom:12px;
+
+}
+
+.card-evento span{
+
+    font-size:1.35rem;
+
+    line-height:1.6;
+
+    color:#555;
+
+}
+
+
+/* ==========================================
+   TARJETA PASTEL
+========================================== */
+
+.pastel{
+
+    margin-top:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.card-pastel{
+
+    width:420px;
+
+    background:#FFF;
+
+    border-radius:22px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+
+    border-top:6px solid #8B1E24;
+
+    transition:.35s;
+
+}
+
+.card-pastel:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+
+}
+
+.card-pastel .icono{
+
+    font-size:56px;
+
+    margin-bottom:18px;
+
+}
+
+.card-pastel h3{
+
+    font-size:2rem;
+
+    color:#21412E;
+
+    margin-bottom:15px;
+
+}
+
+.card-pastel span{
+
+    font-size:1.30rem;
+
+    color:#555;
+
+    line-height:1.6;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:900px){
+
+    #evento{
+
+        padding:80px 25px;
+
+    }
+
+    .titulo-evento{
+
+        margin-bottom:45px;
+
+    }
+
+    .titulo-evento h2{
+
+        font-size:2.5rem;
+
+    }
+
+    .titulo-evento p{
+
+        font-size:1.2rem;
+
+    }
+
+    .grid-evento{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+		
+
+    }
+
+    .card-evento{
+
+        padding:30px;
+
+    }
+
+    .card-evento h3{
+
+        font-size:1.7rem;
+
+    }
+
+    .card-evento span{
+
+        font-size:1.15rem;
+
+    }
+
+    .card-pastel{
+
+        width:100%;
+
+        padding:30px;
+
+    }
+
+}
+/*==========================================
+    PAGINA 4
+==========================================*/
+
+#ubicacion{
+
+    padding:120px 40px;
+
+    background:#F9F6F1;
+
+}
+
+.titulo-ubicacion{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.titulo-ubicacion h2{
+
+    font-size:3.3rem;
+
+    color:#21412E;
+
+    margin-bottom:15px;
+
+}
+
+.intro-ubicacion{
+
+    font-size:1.4rem;
+
+    line-height:1.8;
+
+    color:#555;
+
+    max-width:720px;
+
+    margin:auto;
+
+}
+
+
+.foto-rancho{
+
+    max-width:1050px;
+
+    margin:60px auto;
+
+}
+
+.foto-rancho img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:25px;
+
+    box-shadow:0 30px 70px rgba(0,0,0,.18);
+
+}
+
+
+.texto-rancho{
+
+    max-width:900px;
+
+    margin:50px auto;
+
+    text-align:center;
+
+}
+
+.texto-rancho h3{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3rem;
+
+    color:#8B1E24;
+
+    margin-bottom:20px;
+
+}
+
+.texto-rancho p{
+
+    font-size:1.35rem;
+
+    line-height:1.9;
+
+}
+
+
+.botones-mapa{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:60px;
+
+}
+
+
+.btn-mapa{
+
+    display:inline-block;
+
+    padding:18px 42px;
+
+    border-radius:50px;
+
+    background:#1E5B37;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:1.2rem;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.btn-mapa:hover{
+
+    transform:translateY(-5px);
+
+    background:#2D7A4D;
+
+}
+
+
+.nota-mapa{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    color:#666;
+
+    font-style:italic;
+
+    font-size:1.1rem;
+
+}
+
+
+/*==========================================
+        RESPONSIVE
+==========================================*/
+
+@media(max-width:900px){
+
+#ubicacion{
+
+    padding:90px 25px;
+
+}
+
+.titulo-ubicacion h2{
+
+    font-size:2.6rem;
+
+}
+
+.intro-ubicacion{
+
+    font-size:1.2rem;
+
+}
+
+.texto-rancho h3{
+
+    font-size:2.5rem;
+
+}
+
+.texto-rancho p{
+
+    font-size:1.15rem;
+
+}
+
+.btn-mapa{
+
+    width:100%;
+
+    text-align:center;
+
+    padding:18px;
+
+}
+
+}
+
+/*==========================================
+        PAGINA 5
+==========================================*/
+
+#confirmacion{
+
+    padding:140px 40px;
+
+    background:#21412E;
+
+    color:white;
+
+}
+
+.confirmacion-contenido{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.confirmacion-contenido h2{
+
+    font-size:4rem;
+
+    margin-bottom:15px;
+
+}
+
+.confirmacion-contenido .bordado{
+
+    color:#D9C27A;
+
+    margin-bottom:35px;
+
+}
+
+.mensaje-confirmacion{
+
+    font-size:1.6rem;
+
+    line-height:1.8;
+
+    margin-bottom:55px;
+
+}
+
+.btn-whatsapp{
+
+    display:inline-block;
+
+    padding:20px 55px;
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-size:1.3rem;
+
+    font-weight:bold;
+
+    transition:.35s;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.25);
+
+}
+
+.btn-whatsapp:hover{
+
+    transform:translateY(-6px);
+
+    background:#1EBE5D;
+
+}
+
+.fecha-final{
+
+    margin-top:80px;
+
+}
+
+.fecha-final h3{
+
+    font-size:2rem;
+
+    font-weight:400;
+
+}
+
+.fecha-final .firma{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:4rem;
+
+    margin-top:20px;
+
+    color:white;
+
+}
+
+@media(max-width:900px){
+
+#confirmacion{
+
+    padding:90px 25px;
+
+}
+
+.confirmacion-contenido h2{
+
+    font-size:2.8rem;
+
+}
+
+.mensaje-confirmacion{
+
+    font-size:1.3rem;
+
+}
+
+.btn-whatsapp{
+
+    width:100%;
+
+    padding:18px;
+
+}
+
+.fecha-final h3{
+
+    font-size:1.5rem;
+
+}
+
+.fecha-final .firma{
+
+    font-size:3rem;
+
+}
+
+}
