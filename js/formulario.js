@@ -206,59 +206,43 @@ document.addEventListener("DOMContentLoaded", () => {
             AQUÍ irá el fetch()
         ===================================*/
 
-        fetch("https://script.google.com/macros/s/AKfycbyptstqQL6OybCj2ZeLwLs9flXYmgTqaJMSYPAM_XGAEiyh0Sx8zJoY3faV9TJXQ4FH/exec",{
+   const formData = new URLSearchParams();
 
-    method:"POST",
+formData.append("nombre", datos.nombre);
+formData.append("asistencia", datos.asistencia);
+formData.append("adultos", datos.adultos);
+formData.append("ninos", datos.ninos);
+formData.append("mensaje", datos.mensaje);
 
-    headers:{
-
-        "Content-Type":"application/json"
-
-    },
-
-    body:JSON.stringify(datos)
-
+fetch("https://script.google.com/macros/s/AKfycbyptstqQL6OybCj2ZeLwLs9flXYmgTqaJMSYPAM_XGAEiyh0Sx8zJoY3faV9TJXQ4FH/exec", {
+    method: "POST",
+    body: formData
 })
+.then(response => response.json())
+.then(data => {
 
-.then(response=>response.json())
+    enviar.innerHTML = "✓ Confirmado";
 
-.then(data=>{
+    setTimeout(() => {
 
-    enviar.innerHTML="✓ Confirmado";
-
-    setTimeout(()=>{
-
-        alert(
-
-`Muchas gracias.
-
-Tu confirmación fue registrada correctamente.
-
-¡Nos vemos el 13 de septiembre!`
-
-        );
+        alert("Muchas gracias.\n\nTu confirmación fue registrada correctamente.");
 
         limpiar();
 
         cerrarModal();
 
-    },600);
+    }, 600);
 
 })
-
-.catch(error=>{
+.catch(error => {
 
     console.error(error);
 
-    enviar.disabled=false;
+    enviar.disabled = false;
 
-    enviar.innerHTML="Confirmar asistencia";
+    enviar.innerHTML = "Confirmar asistencia";
 
-    alert(
-
-"No fue posible enviar la confirmación.\n\nInténtalo nuevamente."
-
-    );
+    alert("No fue posible enviar la confirmación.");
 
 });
 
