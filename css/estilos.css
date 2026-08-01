@@ -53,6 +53,8 @@ body {
     position:relative;
     z-index:2;
     text-align:center;
+
+    margin-top:380px;   /* Computadora */
 }
 
 /* Botón */
@@ -79,7 +81,7 @@ body {
 
     box-shadow:0 12px 30px rgba(0,0,0,.25);
 
-    margin-top:420px;   /* Baja únicamente el botón */
+
 }
 
 .btn:hover{
@@ -860,7 +862,11 @@ body {
     #hero{
         height:100vh;
     }
+    .hero-content{
 
+        margin-top:300px;
+
+    }
     .btn{
         margin-top:35px;
         padding:16px 42px;
