@@ -5,6 +5,7 @@
 <title>Invitación Gloria 55</title>
 <link rel="stylesheet" href="css/estilos.css">
 <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/formulario.css">
 </head>
 <body>
 <header id="hero">
@@ -236,17 +237,17 @@
 
         </p>
 
-        <a
+        <button
 
-            class="btn-whatsapp"
+    id="abrirFormulario"
 
-            href="https://wa.me/528182534080?text=Hola%20Gloria,%20confirmo%20mi%20asistencia%20a%20tu%20celebración."
+    class="btn-whatsapp"
 
-            target="_blank">
+    type="button">
 
-            Confirmar asistencia
+    Confirmar asistencia
 
-        </a>
+</button>
 
         <div class="fecha-final">
 
@@ -268,4 +269,227 @@
 
 </section>
 <script src="js/app.js"></script>
+<script src="js/formulario.js"></script>
+<!--====================================================
+        MODAL CONFIRMAR ASISTENCIA
+=====================================================-->
+
+<div id="modalConfirmacion">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <h2>Confirma tu asistencia</h2>
+
+            <p>
+
+                Tu presencia será el mejor regalo.<br>
+
+                Por favor confirma antes del
+                <strong>30 de agosto de 2026.</strong>
+
+            </p>
+
+        </div>
+
+        <div class="modal-body">
+
+            <!-- Nombre -->
+
+            <label for="nombre">
+
+                👤 Nombre completo
+
+            </label>
+
+            <input
+                type="text"
+                id="nombre"
+                maxlength="100"
+                placeholder="Escribe tu nombre completo">
+
+
+
+
+            <!-- Asistencia -->
+
+            <label>
+
+                ¿Podrás acompañarme?
+
+            </label>
+
+            <div class="radio-group">
+
+                <label>
+
+                    <input
+                        type="radio"
+                        id="asisteSi"
+                        name="asistencia"
+                        checked>
+
+                    Sí, con mucho gusto.
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="radio"
+                        id="asisteNo"
+                        name="asistencia">
+
+                    Lamentablemente no podré asistir.
+
+                </label>
+
+            </div>
+
+
+
+
+            <!-- Contadores -->
+
+            <div class="contadores">
+
+                <!-- Adultos -->
+
+                <div class="contador">
+
+                    <h4>Adultos</h4>
+
+                    <div class="control">
+
+                        <button
+                            type="button"
+                            class="restar"
+                            data-campo="adultos">
+
+                            −
+
+                        </button>
+
+                        <input
+                            id="adultos"
+                            type="text"
+                            value="1"
+                            readonly>
+
+                        <button
+                            type="button"
+                            class="sumar"
+                            data-campo="adultos">
+
+                            +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- Niños -->
+
+                <div class="contador">
+
+                    <h4>Niños</h4>
+
+                    <div class="control">
+
+                        <button
+                            type="button"
+                            class="restar"
+                            data-campo="ninos">
+
+                            −
+
+                        </button>
+
+                        <input
+                            id="ninos"
+                            type="text"
+                            value="0"
+                            readonly>
+
+                        <button
+                            type="button"
+                            class="sumar"
+                            data-campo="ninos">
+
+                            +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <!-- Mensaje -->
+
+            <label for="mensaje">
+
+                💬 Mensaje para Gloria
+
+            </label>
+
+            <textarea
+
+                id="mensaje"
+
+                maxlength="400"
+
+                placeholder="Si lo deseas puedes dejarme un mensaje...">
+
+            </textarea>
+
+        </div>
+
+
+
+
+        <!-- Botones -->
+
+        <div class="modal-footer">
+
+            <button
+
+                id="btnCancelar"
+
+                class="btnCancelar"
+
+                type="button">
+
+                Cancelar
+
+            </button>
+
+
+            <button
+
+                id="btnEnviar"
+
+                class="btnEnviar"
+
+                type="button">
+
+                Confirmar asistencia
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 </body></html>
