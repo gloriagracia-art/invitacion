@@ -1,0 +1,449 @@
+/*======================================================
+    FORMULARIO MODAL
+    Gloria 55
+======================================================*/
+
+/*========== FONDO OSCURO ==========*/
+
+#modalConfirmacion{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(8px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:9999;
+
+}
+
+#modalConfirmacion.activo{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+/*========== VENTANA ==========*/
+
+.modal{
+
+    width:92%;
+
+    max-width:640px;
+
+    max-height:90vh;
+
+    background:#FFF;
+
+    border-radius:26px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.25);
+
+    transform:translateY(40px);
+
+    transition:.35s;
+
+}
+
+.modal::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.modal::-webkit-scrollbar-thumb{
+
+    background:#8B1E24;
+
+    border-radius:10px;
+
+}
+
+.modal::-webkit-scrollbar-track{
+
+    background:#EFEFEF;
+
+}
+
+#modalConfirmacion.activo .modal{
+
+    transform:translateY(0);
+
+}
+
+
+/*========== CABECERA ==========*/
+
+.modal-header{
+
+    background:#21412E;
+
+    color:#FFF;
+
+    text-align:center;
+
+    padding:35px;
+
+}
+
+.modal-header h2{
+
+    font-size:2.2rem;
+
+    margin-bottom:10px;
+
+}
+
+.modal-header p{
+
+    font-size:1.05rem;
+
+    opacity:.95;
+
+    line-height:1.7;
+
+}
+
+
+/*========== CUERPO ==========*/
+
+.modal-body{
+
+    padding:40px;
+
+}
+
+
+/*========== LABELS ==========*/
+
+.modal-body label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    margin-top:25px;
+
+    font-weight:600;
+
+    color:#21412E;
+
+}
+
+
+/*========== INPUT ==========*/
+
+.modal-body input[type=text]{
+
+    width:100%;
+
+    padding:16px;
+
+    border:1px solid #DDD;
+
+    border-radius:14px;
+
+    font-size:1rem;
+
+    transition:.30s;
+
+}
+
+.modal-body input[type=text]:focus{
+
+    outline:none;
+
+    border-color:#8B1E24;
+
+    box-shadow:
+
+        0 0 0 4px rgba(139,30,36,.12);
+
+}
+
+
+/*========== RADIO ==========*/
+
+.radio-group{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:10px;
+
+}
+
+.radio-group label{
+
+    margin:0;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+}
+
+
+/*========== CONTADORES ==========*/
+
+.contadores{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+.contador{
+
+    text-align:center;
+
+}
+
+.contador h4{
+
+    color:#21412E;
+
+    margin-bottom:15px;
+
+}
+
+.control{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.control button{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#8B1E24;
+
+    color:#FFF;
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+.control button:hover{
+
+    background:#6F161C;
+
+    transform:scale(1.08);
+
+}
+
+.control input{
+
+    width:60px;
+
+    text-align:center;
+
+    border:none;
+
+    font-size:1.3rem;
+
+    background:#F5F5F5;
+
+    border-radius:12px;
+
+    padding:10px;
+
+}
+
+
+/*========== MENSAJE ==========*/
+
+.modal-body textarea{
+
+    width:100%;
+
+    min-height:130px;
+
+    resize:vertical;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    border:1px solid #DDD;
+
+    font-size:1rem;
+
+    transition:.30s;
+
+}
+
+.modal-body textarea:focus{
+
+    outline:none;
+
+    border-color:#8B1E24;
+
+    box-shadow:
+
+        0 0 0 4px rgba(139,30,36,.12);
+
+}
+
+
+/*========== BOTONES ==========*/
+
+.modal-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    padding:30px 40px;
+
+    border-top:1px solid #EEE;
+
+}
+
+.btnCancelar{
+
+    background:#EAEAEA;
+
+    color:#444;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:14px 26px;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+.btnCancelar:hover{
+
+    background:#DADADA;
+
+}
+
+.btnEnviar{
+
+    background:#8B1E24;
+
+    color:#FFF;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:14px 34px;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+.btnEnviar:hover{
+
+    background:#74171D;
+
+    transform:translateY(-2px);
+
+}
+
+
+/*========== RESPONSIVE ==========*/
+
+@media(max-width:768px){
+
+.modal{
+
+    width:96%;
+
+}
+
+.modal-header{
+
+    padding:25px;
+
+}
+
+.modal-header h2{
+
+    font-size:1.8rem;
+
+}
+
+.modal-body{
+
+    padding:25px;
+
+}
+
+.contadores{
+
+    grid-template-columns:1fr;
+
+}
+
+.modal-footer{
+
+    flex-direction:column;
+
+}
+
+.btnCancelar,
+
+.btnEnviar{
+
+    width:100%;
+
+}
+
+}
