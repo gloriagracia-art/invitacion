@@ -4,10 +4,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Invitación Gloria 55</title>
 <link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 <header id="hero">
-<img class="hero-img" src="img/portada.png" alt="">
+<picture>
+    <!-- Celular -->
+    <source media="(max-width:768px)" srcset="img/portada-mobile.webp">
+
+    <!-- Computadora -->
+    <img src="img/portada.webp"
+         alt="Portada Gloria 55"
+         class="hero-img">
+</picture>
 <div class="overlay"></div>
 <div class="hero-content">
 <a class="btn" href="#bienvenida">Comenzar</a>
@@ -16,7 +25,7 @@
 
 <section id="bienvenida">
 <div class="contenedor">
-<div class="foto"><img src="img/bienvenida.png" alt=""></div>
+<div class="foto"><img src="img/bienvenida.webp" alt=""></div>
 <div class="texto">
 <h2>Nuestra historia<br>comienza aquí</h2>
 <div class="bordado">❀ ❀ ❀</div>
@@ -161,7 +170,7 @@
 
     <div class="foto-rancho">
 
-        <img src="img/rancho.png" alt="Entrada al Rancho">
+        <img src="img/rancho.webp" alt="Entrada al Rancho">
 
     </div>
 
