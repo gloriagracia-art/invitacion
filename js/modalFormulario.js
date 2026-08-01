@@ -2,58 +2,49 @@
     MODAL FORMULARIO
 =========================================================*/
 
+const modal = document.getElementById("modalFormulario");
+
+const iframe = document.getElementById("iframeFormulario");
+
+const abrir = document.getElementById("abrirFormulario");
+
+const cerrar = document.getElementById("cerrarFormulario");
+
+
+/*=========================================================
+    URL DEL FORMULARIO DE APPS SCRIPT
+=========================================================*/
+
 const URL_FORMULARIO =
 "https://script.google.com/macros/s/AKfycbyptstqQL6OybCj2ZeLwLs9flXYmgTqaJMSYPAM_XGAEiyh0Sx8zJoY3faV9TJXQ4FH/exec";
 
 
-const modal=document.getElementById("modalFormulario");
-
-const iframe=document.getElementById("iframeFormulario");
-
-const cerrar=document.getElementById("cerrarFormulario");
-
-const abrir=document.getElementById("abrirFormulario");
-
-
 /*=========================================================
-    INICIAR
+    ABRIR MODAL
 =========================================================*/
 
-document.addEventListener("DOMContentLoaded",()=>{
-
-    abrir.addEventListener("click",abrirFormulario);
-
-    cerrar.addEventListener("click",cerrarFormulario);
-
-});
-
-
-/*=========================================================
-    ABRIR
-=========================================================*/
+abrir.addEventListener("click", abrirFormulario);
 
 function abrirFormulario(){
 
-    iframe.src=URL_FORMULARIO;
-
     modal.classList.add("activo");
 
-    document.body.style.overflow="hidden";
+    iframe.src = URL_FORMULARIO;
 
 }
 
 
 /*=========================================================
-    CERRAR
+    CERRAR MODAL
 =========================================================*/
+
+cerrar.addEventListener("click", cerrarFormulario);
 
 function cerrarFormulario(){
 
     modal.classList.remove("activo");
 
-    iframe.src="";
-
-    document.body.style.overflow="auto";
+    iframe.src = "";
 
 }
 
@@ -62,7 +53,7 @@ function cerrarFormulario(){
     CERRAR CON ESC
 =========================================================*/
 
-document.addEventListener("keydown",(e)=>{
+document.addEventListener("keydown", function(e){
 
     if(e.key==="Escape"){
 
@@ -74,12 +65,27 @@ document.addEventListener("keydown",(e)=>{
 
 
 /*=========================================================
-    CLICK FUERA
+    CERRAR AL DAR CLICK FUERA
 =========================================================*/
 
-modal.addEventListener("click",(e)=>{
+modal.addEventListener("click", function(e){
 
     if(e.target===modal){
+
+        cerrarFormulario();
+
+    }
+
+});
+
+
+/*=========================================================
+    MENSAJE DESDE APPS SCRIPT
+=========================================================*/
+
+window.addEventListener("message", function(e){
+
+    if(e.data.accion==="cerrarFormulario"){
 
         cerrarFormulario();
 
