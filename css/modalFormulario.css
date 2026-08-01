@@ -1,0 +1,175 @@
+/*=========================================================
+    MODAL FORMULARIO
+=========================================================*/
+
+.modal-formulario{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    padding:20px;
+
+    animation:fadeIn .30s;
+
+}
+
+
+/*=========================================================
+    ACTIVO
+=========================================================*/
+
+.modal-formulario.activo{
+
+    display:flex;
+
+}
+
+
+/*=========================================================
+    CONTENIDO
+=========================================================*/
+
+.modal-contenido{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:760px;
+
+    height:90vh;
+
+    background:#FFF;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.35);
+
+}
+
+
+/*=========================================================
+    IFRAME
+=========================================================*/
+
+#iframeFormulario{
+
+    width:100%;
+
+    height:100%;
+
+    border:none;
+
+    background:#FFF;
+
+}
+
+
+/*=========================================================
+    BOTÓN CERRAR
+=========================================================*/
+
+.cerrar-modal{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#8B1E24;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:1000;
+
+    transition:.25s;
+
+}
+
+.cerrar-modal:hover{
+
+    transform:scale(1.10);
+
+    background:#6D171C;
+
+}
+
+
+/*=========================================================
+    ANIMACIÓN
+=========================================================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+/*=========================================================
+    RESPONSIVE
+=========================================================*/
+
+@media(max-width:768px){
+
+    .modal-formulario{
+
+        padding:0;
+
+    }
+
+    .modal-contenido{
+
+        width:100%;
+
+        height:100vh;
+
+        border-radius:0;
+
+    }
+
+    .cerrar-modal{
+
+        top:10px;
+
+        right:10px;
+
+    }
+
+}
